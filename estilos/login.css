@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #1B1C21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 500px;
+}
+
+.logo {
+    text-align: center;
+}
+
+i {
+    color: white;
+    font-size: 134px;
+}
+
+p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin: 18px 10px;
+}
+
+.campos {
+    width: 100%;
+    height: 40px;
+    background: #26262E;
+    outline: none;
+    border: 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.boton {
+    color: white;
+    background: #0480DC;
+    width: 100%;
+    height: 57px;
+    outline: none;
+    border: 0;
+    margin-top: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}

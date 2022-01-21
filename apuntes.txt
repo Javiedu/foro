@@ -1,3 +1,4 @@
 Fondo: #1B1C21
 Caja: #26262E
 SideBar: #131418
+Azul: #0480DC

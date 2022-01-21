@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.lateral {
+    background: #131418;
+    height: 100vh;
+    width: 5.5vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main_iconos {
+    width: 100%;
+}
+
+.main_iconos div {
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    margin-top: 5px;
+}
+
+.div_paginas {
+    margin: 20px 0px;
+}
+
+.fas {
+    color: white;
+}
+
+.fas:hover {
+    color: #0480DC;
+}
+
+.fa-signature {
+    font-size: 40px;
+}
+
+.paginas {
+    font-size: 20px;
+}
+
+.main_opciones {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.caja_opciones {
+    width: 100%;
+}
+
+.div_opciones {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.opciones {
+    font-size: 30px;
+}

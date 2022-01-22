@@ -10,7 +10,7 @@
     <body>
         <div class="main">
             <div class="logo" ><i class="fas fa-signature"></i></div>
-            <form action="" method="post">
+            <form action="back/back_login.php" method="post">
                 <p>Usuario</p>
                 <input class="campos" type="text" name="usuario" id="usuario">
                 <p>Contraseña</p>

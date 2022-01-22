@@ -1,6 +1,11 @@
+<?php 
+    require "../back/funciones.php";
+    requerir_sesion();
+?>
+
 <html>
     <head>
-        <title>Panel</title>
+        <title><?php echo $_SESSION["ID"]; ?></title>
         <link rel="stylesheet" href="../estilos/panel.css">
         <script src="https://kit.fontawesome.com/d065ecc10d.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,15 +24,15 @@
             <div class="main_opciones">
                 <div class="caja_opciones">
                     <div class="div_opciones"><a href="#"><i class="fas fa-cog opciones"></i></a></div>
-                    <div class="div_opciones"><a href="#"><i class="fas fa-sign-out-alt opciones"></i></a></div>
+                    <div class="div_opciones"><a href="../back/back_unlogin.php"><i class="fas fa-sign-out-alt opciones"></i></a></div>
                 </div>
             </div>
         </div>
         <div class="principal">
             <div class="superior">
                 <div class="perfil">
-                    <p>Maria Cruz Castells</p>
-                    <img src="../imagenes/perfil.png">
+                    <p><?php echo $_SESSION["nombre"] . " " . $_SESSION["apellidos"] ?></p>
+                    <?php echo "<img src='../imagenes_perfil/" . $_SESSION["ID"] . ".png'>" ?>
                 </div>
             </div>
             <div class="panel">

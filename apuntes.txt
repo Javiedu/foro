@@ -2,3 +2,31 @@ Fondo: #1B1C21
 Caja: #26262E
 SideBar: #131418
 Azul: #0480DC
+
+                               ESQUEMA PROVISIONAL BASE DE DATOS
+
+                                       ┌───────────────────┐
+                                       │      Mensaje      │
+                                       ├───────────────────┤
+                                       │ID      PK AU      │
+┌──────────────────────────┐           │mensaje Text(600)  │
+│         Usuario          │ ┌────────►│autor   FK(Usuario)│
+├──────────────────────────┤ │   ┌────►│entrada FK(Entrada)│
+│ID                PK AU   ├─┤   │     └───────────────────┘
+│nick              Text(30)│ │   │
+|password          Text(30)| |   |
+│nombre            Text(30)│ │   │     ┌─────────────────────────┐
+│apellidos         Text(60)│ │   │     │         Entrada         │
+│fecha_de_registro Date    │ │   │     ├─────────────────────────┤
+│profesion         Text(90)│ │   └─────┤ID          PK AU        │
+└──────────────────────────┘ │         │nombre      Text(200)    │
+                             │         │descripcion Text(255)    │
+                             └────────►│autor       FK(Usuario)  │
+                                       │categoria   FK(Categoria)│◄───┐
+                                       └─────────────────────────┘    │
+                                                                      │ ┌───────────────┐
+                                                                      │ │   Categoria   │
+                                                                      │ ├───────────────┤
+                                                                      └─┤ID     PK AU   │
+                                                                        │nombre Text(30)│
+                                                                        └───────────────┘

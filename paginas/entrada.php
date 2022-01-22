@@ -1,3 +1,8 @@
+<?php 
+    require "../back/funciones.php";
+    requerir_sesion();
+?>
+
 <html>
     <head>
         <title>Entrada</title>
@@ -29,8 +34,8 @@
         <div class="principal">
             <div class="superior">
                 <div class="perfil">
-                    <p>Maria Cruz Castells</p>
-                    <img src="../imagenes/perfil.png">
+                    <p><?php echo $_SESSION["nombre"] . " " . $_SESSION["apellidos"] ?></p>
+                    <?php echo "<img src='../imagenes_perfil/" . $_SESSION["ID"] . ".png'>" ?>
                 </div>
             </div>
             <div class="panel">

@@ -42,7 +42,7 @@
                         </div>
                         <div class="trend_separador"></div>
                         <div class="trend_inferior">
-                            <h1>¿Que es mejor FlexBox o CCS Grid?</h1>
+                            <h1>¿Que es mejor FlexBox o CSS Grid?</h1>
                             <h5>Entra y da tu opinion de que es mejor, FlexBox o CSS Grid</h5>
                         </div>
                     </div>

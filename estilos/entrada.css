@@ -41,5 +41,124 @@ body {
 .panel_interior {
     width: 90%;
     margin: auto;
-    padding-top: 20px;
+    padding-top: 40px;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo_entrada h1 {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+.titulo_entrada h5 {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+}
+
+.autor {
+    display: flex;
+    align-items: center;
+}
+
+.autor h4 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    margin-right: 10px;
+    color: white;
+}
+
+.autor img {
+    height: 60px;
+}
+
+.mensajes {
+    padding-top: 30px;
+}
+
+.mensaje {
+    background: #26262E;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0px;
+}
+
+.mensaje_texto {
+    width: 75%;
+    display: flex;
+    align-items: center;
+}
+
+.mensaje_texto p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 12px;
+}
+
+.mensaje_autor {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mensaje_autor_datos {
+    width: 40%;
+}
+
+.mensaje_autor_datos h6{
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 12px;
+}
+
+form {
+    background: #26262E;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+
+textarea {
+    box-sizing: border-box;
+    width:75%;
+    resize: none;
+    overflow-y: hidden;
+    border: 0;
+    outline: 0;
+    background: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.boton_formulario button {
+    background: none;
+    outline:none;
+    border: none;
+}
+
+.boton_formulario .fas {
+    color: white;
+    font-size: 40px;
+    margin-right: 20px;
+}
+
+.boton_formulario .fas:hover {
+    color: #0480DC;
 }

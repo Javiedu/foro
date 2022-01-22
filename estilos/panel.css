@@ -9,9 +9,10 @@ body {
 }
 
 .lateral {
+    position: fixed;
     background: #131418;
     height: 100vh;
-    width: 5.5vw;
+    width: 70px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -70,6 +71,7 @@ body {
 }
 
 .principal {
+    margin-left: 5.5vw;
     width:94.5vw;
     min-height: 100%;
 }

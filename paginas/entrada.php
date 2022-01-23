@@ -1,14 +1,27 @@
 <?php 
     require "../back/funciones.php";
+    require "../back/bbdd.php";
     requerir_sesion();
+
+    if (isset($_POST['validar'])) {
+        insert_mensaje($_SESSION['ID'], $_GET['e'], $_POST['area_mensaje']);
+    }
+
+    if (isset($_GET['e'])) {
+        $e = $_GET['e'];
+    }
+
+    $entrada = select_entrada($e);
+    $autor_entrada = select_autor_entrada($e);
+    $mensajes = select_mensajes_entrada($e);
 ?>
 
 <html>
     <head>
-        <title>Entrada</title>
+        <title><?php echo $autor_entrada['nombre']; ?></title>
         <link rel="stylesheet" href="../estilos/lateral.css">
+        <link rel="stylesheet" href="../estilos/main.css">
         <link rel="stylesheet" href="../estilos/entrada.css">
-        <link rel="stylesheet" href="../estilos/textarea.css">
         <script src="https://kit.fontawesome.com/d065ecc10d.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,20 +30,7 @@
         <script src="../js/textare.js"></script>
     </head>
     <body>
-        <div class="lateral">
-            <div class="main_iconos">
-                <div class="logo"><a href="#"><i class="fas fa-signature"></i></a></div>
-                <div class="div_paginas"><a href="#"><i class="fas fa-clock paginas"></i></a></div>
-                <div class="div_paginas"><a href="#"><i class="fas fa-fire paginas"></i></a></div>
-                <div class="div_paginas"><a href="#"><i class="fas fa-folder paginas"></i></a></div>
-            </div>
-            <div class="main_opciones">
-                <div class="caja_opciones">
-                    <div class="div_opciones"><a href="#"><i class="fas fa-cog opciones"></i></a></div>
-                    <div class="div_opciones"><a href="#"><i class="fas fa-sign-out-alt opciones"></i></a></div>
-                </div>
-            </div>
-        </div>
+        <?php require "lateral.php"; ?>
         <div class="principal">
             <div class="superior">
                 <div class="perfil">
@@ -42,26 +42,31 @@
                 <div class="panel_interior">
                     <div class="cabecera">
                         <div class="titulo_entrada">
-                            <h1>¿Que es mejor FlexBox o CSS Grid?</h1>
-                            <h5>Entra y da tu opinion de que es mejor, FlexBox o CSS Grid</h5>
+                            <h1><?php echo $entrada['nombre']; ?></h1>
+                            <h5><?php echo $entrada['descripcion']; ?></h5>
                         </div>
                         <div class="autor">
-                            <h4>por Marcos Correa Perez</h4>
-                            <img src="../imagenes/perfil2.png">
+                            <h4>por <?php echo $autor_entrada['nombre'] . " " . $autor_entrada['apellidos'] ?></h4>
+                            <?php echo "<img src='../imagenes_perfil/" . $autor_entrada['ID'] . ".png'>" ?>
                         </div>
                     </div>
                     <div class="mensajes">
-                        <div class="mensaje">
-                            <div class="mensaje_texto"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare convallis ultricies. Quisque ut lectus a lorem tempus maximus. Phasellus eget massa at elit consequat malesuada in in tellus. Ut tristique eget neque ut porttitor. Aliquam id augue vestibulum, volutpat ligula ac, pharetra nisl. Quisque quis eleifend velit, non sagittis enim. Etiam pellentesque purus vitae varius suscipit. Curabitur maximus quam ut ligula elementum, vel dictum urna blandit. Vestibulum faucibus enim ac libero euismod imperdiet. Pellentesque mattis sapien mi, quis ultricies sem pretium eget. Etiam consectetur pellentesque justo, non commodo nisi scelerisque vel. Nam ac ex ac leo blandit faucibus. Donec nisl erat, ornare a neque et, pellentesque pellentesque erat. Vestibulum accumsan ipsum ut purus convallis dictum.</p></div>
-                            <div class="mensaje_autor">
-                                <div class="mensaje_autor_datos">
-                                    <h6>Jesus Antonio Valdivia</h6>
-                                    <h6>Desarrollador FrontEnd</h6>
-                                </div>
-                                <div class="mensaje_autor_imagen"><img src="../imagenes/perfil4.png"></div>
-                            </div>
-                        </div>
-                        <form action="" method="post">
+                        <?php
+                            while($row = mysqli_fetch_assoc($mensajes)) {
+                                $autor_mensaje = select_usuario($row['autor_id']);
+                                echo "<div class='mensaje'>";
+                                echo "<div class='mensaje_texto'><p>" . $row['mensaje'] . "</p></div>";
+                                echo "<div class='mensaje_autor'>";
+                                echo "<div class='mensaje_autor_datos'>";
+                                echo "<h6>" . $autor_mensaje['nombre'] . " " . $autor_mensaje['apellidos'] . "</h6>";
+                                echo "<h6>" . $autor_mensaje['profesion'] . "</h6>";
+                                echo "</div>";
+                                echo "<div class='mensaje_autor_imagen'><img src='../imagenes_perfil/" . $autor_mensaje['ID'] . ".png'></div>";
+                                echo "</div>";
+                                echo "</div>";
+                            }
+                        ?>
+                        <form <?php echo "action='entrada.php?e=" . $_GET['e'] . "' "; ?> method="post">
                             <textarea name="area_mensaje" id="area_mensaje" rows="5" placeholder="¿Que estas pensando?" maxlength="600"></textarea>
                             <div class="boton_formulario">
                                 <button name="validar" type="submit"><i class="fas fa-location-arrow"></i></button>

@@ -1,11 +1,18 @@
 <?php 
     require "../back/funciones.php";
+    require "../back/bbdd.php";
     requerir_sesion();
+
+    $primera_entrada = select_primera_entrada();
+    $autor_primera_entrada = select_autor_entrada($primera_entrada['ID']);
+    $entradas_tendencia = select_entradas_panel();
 ?>
 
 <html>
     <head>
         <title><?php echo $_SESSION["ID"]; ?></title>
+        <link rel="stylesheet" href="../estilos/lateral.css">
+        <link rel="stylesheet" href="../estilos/main.css">
         <link rel="stylesheet" href="../estilos/panel.css">
         <script src="https://kit.fontawesome.com/d065ecc10d.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,20 +21,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="lateral">
-            <div class="main_iconos">
-                <div class="logo"><a href="#"><i class="fas fa-signature"></i></a></div>
-                <div class="div_paginas"><a href="#"><i class="fas fa-clock paginas"></i></a></div>
-                <div class="div_paginas"><a href="#"><i class="fas fa-fire paginas"></i></a></div>
-                <div class="div_paginas"><a href="#"><i class="fas fa-folder paginas"></i></a></div>
-            </div>
-            <div class="main_opciones">
-                <div class="caja_opciones">
-                    <div class="div_opciones"><a href="#"><i class="fas fa-cog opciones"></i></a></div>
-                    <div class="div_opciones"><a href="../back/back_unlogin.php"><i class="fas fa-sign-out-alt opciones"></i></a></div>
-                </div>
-            </div>
-        </div>
+        <?php require "lateral.php"; ?>
         <div class="principal">
             <div class="superior">
                 <div class="perfil">
@@ -41,161 +35,30 @@
                         <div class="trend_superior">
                             <div><i class="fas fa-fire"></i></div>
                             <div class="trend_perfil">
-                                <p>por Marcos Correa Perez</p>
-                                <img src="../imagenes/perfil2.png">
+                                <p>por <?php echo $autor_primera_entrada['nombre'] . " " . $autor_primera_entrada['apellidos'] ?> </p>
+                                <?php echo "<img src='../imagenes_perfil/" . $autor_primera_entrada['ID'] . ".png'>" ?>
                             </div>
                         </div>
                         <div class="trend_separador"></div>
                         <div class="trend_inferior">
-                            <h1>¿Que es mejor FlexBox o CSS Grid?</h1>
-                            <h5>Entra y da tu opinion de que es mejor, FlexBox o CSS Grid</h5>
+                            <h1><?php echo $primera_entrada['nombre']; ?></h1>
+                            <h5><?php echo $primera_entrada['descripcion']; ?></h5>
                         </div>
                     </div>
                     <div class="recientes">
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
-                        <div class="entrada">
-                            <div class="entrada_superior">
-                                <img src="../imagenes/perfil3.png">
-                            </div>
-                            <div class="entrada_separador"></div>
-                            <div class="entrada_inferior">
-                                <h4>OpenVPN la mejor VPN del momento para sistemas operativos linux</h4>
-                            </div>
-                        </div>
+                        <?php
+                            while ($row = mysqli_fetch_assoc($entradas_tendencia)) {
+                                echo "<div class='entrada'>";
+                                echo "<div class='entrada_superior'>";
+                                echo "<img src='../imagenes_perfil/" . $row['autor_id'] . ".png'>";
+                                echo "</div>";
+                                echo "<div class='entrada_separador'></div>";
+                                echo "<div class='entrada_inferior'>";
+                                echo "<h4>" . $row['nombre'] . "</h4>";
+                                echo "</div>";
+                                echo "</div>";
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

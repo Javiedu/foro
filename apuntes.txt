@@ -3,6 +3,14 @@ Caja: #26262E
 SideBar: #131418
 Azul: #0480DC
 
+Datos necesarios
+     Mensaje
+ID = numero aleatorio
+mensaje = $_POST['Mensaje']
+entrada = $_GET['e']
+autor_id = $_SESSION['ID']
+fecha_de_mensaje = Now
+
                                ESQUEMA PROVISIONAL BASE DE DATOS
 
                                        ┌───────────────────┐

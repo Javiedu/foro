@@ -41,13 +41,16 @@
                         </div>
                         <div class="trend_separador"></div>
                         <div class="trend_inferior">
-                            <h1><?php echo $primera_entrada['nombre']; ?></h1>
-                            <h5><?php echo $primera_entrada['descripcion']; ?></h5>
+                            <?php echo "<a href='entrada.php?e=" . $primera_entrada['ID'] . "'>" ?>
+                                <h1><?php echo $primera_entrada['nombre']; ?></h1>
+                                <h5><?php echo $primera_entrada['descripcion']; ?></h5>
+                            </a>
                         </div>
                     </div>
                     <div class="recientes">
                         <?php
                             while ($row = mysqli_fetch_assoc($entradas_tendencia)) {
+                                echo "<a class='enlace_categoria' href='entrada.php?e=" . $row['ID'] . "'>";
                                 echo "<div class='entrada'>";
                                 echo "<div class='entrada_superior'>";
                                 echo "<img src='../imagenes_perfil/" . $row['autor_id'] . ".png'>";
@@ -57,6 +60,7 @@
                                 echo "<h4>" . $row['nombre'] . "</h4>";
                                 echo "</div>";
                                 echo "</div>";
+                                echo "</a>";
                             }
                         ?>
                     </div>

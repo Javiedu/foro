@@ -31,7 +31,11 @@
                 <div class="panel_interior">
                     <?php
                         while($row = mysqli_fetch_assoc($categorias)) {
-                            echo "<div class='categoria'><h2>" . $row['nombre'] . "</h2></div>";
+                            echo "<div class='categoria'>";
+                            echo "<a href='categoria.php?cat=" . $row['ID'] . "'>";
+                            echo "<div><h2>" . $row['nombre'] . "</h2></div>";
+                            echo "</a>";
+                            echo "</div>";
                         }
                     ?>
                 </div>

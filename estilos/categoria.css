@@ -1,0 +1,50 @@
+h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.mensajes {
+    padding-top: 30px;
+}
+
+.mensaje {
+    background: #26262E;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0px;
+}
+
+.mensaje_texto {
+    width: 75%;
+    display: flex;
+    align-items: center;
+}
+
+.mensaje_texto p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 30px;
+}
+
+.mensaje_autor {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mensaje_autor_datos {
+    width: 40%;
+}
+
+.mensaje_autor_datos h6{
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 12px;
+}

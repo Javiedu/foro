@@ -212,3 +212,48 @@
 
         mysqli_query($conexion, $query);
     }
+
+    function select_entradas_categoria($id) {
+        $bd_servidor = "localhost";
+        $bd = "signa";
+        $bd_usuario = "root";
+        $bd_password = "";
+    
+        $conexion = mysqli_connect(
+            $bd_servidor,
+            $bd_usuario,
+            $bd_password,
+            $bd
+        );
+        
+        $query = "SELECT * FROM entrada WHERE categoria_id = '$id'";
+
+        $resultado = mysqli_query($conexion, $query);
+        if (mysqli_num_rows($resultado) > 0) {
+            return $resultado;
+        }
+
+    }
+
+    function select_nombre_categoria($id) {
+        $bd_servidor = "localhost";
+        $bd = "signa";
+        $bd_usuario = "root";
+        $bd_password = "";
+    
+        $conexion = mysqli_connect(
+            $bd_servidor,
+            $bd_usuario,
+            $bd_password,
+            $bd
+        );
+        
+        $query = "SELECT * FROM categoria WHERE ID = '$id'";
+
+        $resultado = mysqli_query($conexion, $query);
+        if (mysqli_num_rows($resultado) > 0) {
+            while($row = mysqli_fetch_assoc($resultado)) {
+                return $row['nombre'];
+            }
+        }
+    }

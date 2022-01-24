@@ -52,18 +52,20 @@
                     </div>
                     <div class="mensajes">
                         <?php
-                            while($row = mysqli_fetch_assoc($mensajes)) {
-                                $autor_mensaje = select_usuario($row['autor_id']);
-                                echo "<div class='mensaje'>";
-                                echo "<div class='mensaje_texto'><p>" . $row['mensaje'] . "</p></div>";
-                                echo "<div class='mensaje_autor'>";
-                                echo "<div class='mensaje_autor_datos'>";
-                                echo "<h6>" . $autor_mensaje['nombre'] . " " . $autor_mensaje['apellidos'] . "</h6>";
-                                echo "<h6>" . $autor_mensaje['profesion'] . "</h6>";
-                                echo "</div>";
-                                echo "<div class='mensaje_autor_imagen'><img src='../imagenes_perfil/" . $autor_mensaje['ID'] . ".png'></div>";
-                                echo "</div>";
-                                echo "</div>";
+                            if ($mensajes != NULL) {
+                                while($row = mysqli_fetch_assoc($mensajes)) {
+                                    $autor_mensaje = select_usuario($row['autor_id']);
+                                    echo "<div class='mensaje'>";
+                                    echo "<div class='mensaje_texto'><p>" . $row['mensaje'] . "</p></div>";
+                                    echo "<div class='mensaje_autor'>";
+                                    echo "<div class='mensaje_autor_datos'>";
+                                    echo "<h6>" . $autor_mensaje['nombre'] . " " . $autor_mensaje['apellidos'] . "</h6>";
+                                    echo "<h6>" . $autor_mensaje['profesion'] . "</h6>";
+                                    echo "</div>";
+                                    echo "<div class='mensaje_autor_imagen'><img src='../imagenes_perfil/" . $autor_mensaje['ID'] . ".png'></div>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                }
                             }
                         ?>
                         <form <?php echo "action='entrada.php?e=" . $_GET['e'] . "' "; ?> method="post">

@@ -5,6 +5,10 @@
     border-radius: 20px;
 }
 
+h1, h5 {
+    color: white;
+}
+
 .trend_separador {
     height: 150px;
 }

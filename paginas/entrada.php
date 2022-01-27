@@ -18,7 +18,7 @@
 
 <html>
     <head>
-        <title><?php echo $autor_entrada['nombre']; ?></title>
+        <title><?php echo $entrada['nombre']; ?></title>
         <link rel="stylesheet" href="../estilos/lateral.css">
         <link rel="stylesheet" href="../estilos/main.css">
         <link rel="stylesheet" href="../estilos/entrada.css">

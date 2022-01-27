@@ -10,7 +10,7 @@
 
 <html>
     <head>
-        <title><?php echo $_SESSION["ID"]; ?></title>
+        <title><?php echo $nombre_categoria ?></title>
         <link rel="stylesheet" href="../estilos/lateral.css">
         <link rel="stylesheet" href="../estilos/main.css">
         <link rel="stylesheet" href="../estilos/categoria.css">

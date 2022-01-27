@@ -12,7 +12,7 @@
 
 <html>
     <head>
-        <title><?php echo $_SESSION["ID"]; ?></title>
+        <title>Crear Entrada</title>
         <link rel="stylesheet" href="../estilos/lateral.css">
         <link rel="stylesheet" href="../estilos/main.css">
         <script src="https://kit.fontawesome.com/d065ecc10d.js" crossorigin="anonymous"></script>

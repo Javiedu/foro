@@ -1,15 +1,15 @@
 <?php
+    $GLOBALS['bd_servidor'] = "localhost";
+    $GLOBALS['bd'] = "signa";
+    $GLOBALS['bd_usuario'] = "root";
+    $GLOBALS['bd_password'] = "";
+
     function select_entrada($id) {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
 
         $query = "SELECT * FROM entrada WHERE ID = '$id'";
@@ -23,16 +23,11 @@
     }
 
     function select_autor_entrada($id) {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
 
         $query = "SELECT * FROM entrada WHERE ID = '$id'";
@@ -55,16 +50,11 @@
     }
 
     function select_mensajes_entrada($id) {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
 
         $query = "SELECT * FROM mensaje WHERE entrada_id = '$id' ORDER BY fecha_de_mensaje";
@@ -76,16 +66,11 @@
     }
 
     function select_usuario($id) {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
 
         $query = "SELECT * FROM usuario WHERE ID = '$id'";
@@ -104,16 +89,11 @@
     }
 
     function insert_mensaje($autor_id, $entrada_id, $mensaje) {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
         
         $id = random_int(111111, 999999);
@@ -126,16 +106,11 @@
     }
 
     function select_primera_entrada() {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
         
         $query = "SELECT * FROM entrada ORDER BY fecha_de_publicacion DESC LIMIT 1";
@@ -149,16 +124,11 @@
     }
 
     function select_entradas_panel() {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
         
         $query = "SELECT * FROM entrada ORDER BY fecha_de_publicacion DESC LIMIT 1, 12";
@@ -170,16 +140,11 @@
     }
 
     function select_categorias() {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
         
         $query = "SELECT * FROM categoria";
@@ -192,16 +157,11 @@
     }
 
     function insert_entrada($nombre, $descripcion, $categoria_id, $autor_id) {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
         
         $id = random_int(111111, 999999);
@@ -214,16 +174,11 @@
     }
 
     function select_entradas_categoria($id) {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
         
         $query = "SELECT * FROM entrada WHERE categoria_id = '$id'";
@@ -236,16 +191,11 @@
     }
 
     function select_nombre_categoria($id) {
-        $bd_servidor = "localhost";
-        $bd = "signa";
-        $bd_usuario = "root";
-        $bd_password = "";
-    
         $conexion = mysqli_connect(
-            $bd_servidor,
-            $bd_usuario,
-            $bd_password,
-            $bd
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
         );
         
         $query = "SELECT * FROM categoria WHERE ID = '$id'";

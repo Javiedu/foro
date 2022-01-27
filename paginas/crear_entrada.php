@@ -15,6 +15,7 @@
         <title>Crear Entrada</title>
         <link rel="stylesheet" href="../estilos/lateral.css">
         <link rel="stylesheet" href="../estilos/main.css">
+        <link rel="stylesheet" href="../estilos/crear_entrada.css">
         <script src="https://kit.fontawesome.com/d065ecc10d.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,9 +35,11 @@
                 <div class="panel_interior">
                     <form method="post">
                         <p>Nombre</p>
-                        <input type="text" name="nombre" id="nombre">
+                        <input type="text" class="campos campo_nombre" name="nombre" id="nombre" placeholder="¿Que estas pensando?">
                         <p>Descripcion</p>
-                        <textarea name="area_mensaje" id="area_mensaje" rows="5" placeholder="¿Que estas pensando?" maxlength="600"></textarea>
+                        <textarea name="area_mensaje" id="area_mensaje" rows="30" placeholder="¿Que estas pensando?" maxlength="600"></textarea>
+                        <div class="boton_enviar_categorias">
+                        <div>
                         <p>Categoria</p>
                         <select name="categoria" id="categoria">
                             <?php 
@@ -45,8 +48,10 @@
                                 }
                             ?>
                         </select>
+                        </div>
                         <div class="boton_formulario">
                             <button name="validar" type="submit"><i class="fas fa-location-arrow"></i></button>
+                        </div>
                         </div>
                     </form>
                 </div>

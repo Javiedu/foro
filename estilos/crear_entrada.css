@@ -1,0 +1,70 @@
+p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin: 18px 10px;
+}
+
+.campos {
+    width: 100%;
+    background: #26262E;
+    outline: none;
+    border: 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.campo_nombre {
+    height: 14px;
+}
+
+textarea {
+    box-sizing: border-box;
+    width:100%;
+    padding: 14px;
+    resize: none;
+    overflow-y: hidden;
+    border: 0;
+    outline: 0;
+    height: 150px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    background: #26262E;
+}
+
+select {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    background: #26262E;
+    outline: none;
+    border: 0;
+    padding: 15px;
+}
+
+.boton_enviar_categorias {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.boton_formulario button {
+    background: none;
+    outline:none;
+    border: none;
+}
+
+.boton_formulario .fas {
+    color: white;
+    font-size: 40px;
+    margin-right: 20px;
+}
+
+.boton_formulario .fas:hover {
+    color: #0480DC;
+}

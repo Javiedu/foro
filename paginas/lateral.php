@@ -1,7 +1,7 @@
 <div class="lateral">
     <div class="main_iconos">
         <div class="logo"><a href="panel.php"><i class="fas fa-signature"></i></a></div>
-        <div class="div_paginas"><a href="#"><i class="fas fa-fire paginas"></i></a></div>
+        <div class="div_paginas"><a href="ultimos.php"><i class="fas fa-fire paginas"></i></a></div>
         <div class="div_paginas"><a href="categorias.php"><i class="fas fa-folder paginas"></i></a></div>
         <div class="div_paginas"><a href="crear_entrada.php"><i class="fas fa-plus paginas"></i></a></div>
     </div>

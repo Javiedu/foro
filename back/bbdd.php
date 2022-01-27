@@ -207,3 +207,43 @@
             }
         }
     }
+
+    function paginacion_select_entradas($pag) {
+        $conexion = mysqli_connect(
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
+        );
+        
+        $inicio = 6 * $pag;
+        $ultima = $inicio + 6;
+
+        $query = "SELECT * FROM entrada LIMIT " . $inicio . ", " . $ultima;
+
+        $resultado = mysqli_query($conexion, $query);
+        if (mysqli_num_rows($resultado) > 0) {
+            return $resultado;
+        }
+    }
+
+    function pagina_siguiente($pag) {
+        $conexion = mysqli_connect(
+            $GLOBALS['bd_servidor'],
+            $GLOBALS['bd_usuario'],
+            $GLOBALS['bd_password'],
+            $GLOBALS['bd']
+        );
+        $pag = $pag + 1;
+        $inicio = 6 * $pag;
+        $ultima = $inicio + 6;
+
+        $query = "SELECT * FROM entrada LIMIT " . $inicio . ", " . $ultima;
+
+        $resultado = mysqli_query($conexion, $query);
+        if (mysqli_num_rows($resultado) > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
